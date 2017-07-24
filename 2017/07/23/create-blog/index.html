@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo,git," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta name="keywords" content="hexo,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2017/07/23/create-blog/index.html">
+<meta property="og:site_name" content="Jimmie Yang&#39;s  Blog">
+<meta property="og:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-create-github-pages-repo.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-hexo-init.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-add-ssh-key.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-godaddy.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-cname.png">
+<meta property="og:updated_time" content="2017-07-24T01:26:40.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建个人博客">
+<meta name="twitter:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-create-github-pages-repo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/23/create-blog/"/>
+
+
+
+
+
+  <title>搭建个人博客 | Jimmie Yang's  Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/105508/45817/59742313f629d81af80787e6.css' rel='stylesheet' type='text/css' />
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/105508/47609/59742a34f629d81af80787eb.css' rel='stylesheet' type='text/css' />
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/105508/46833/59742b8af629d81af80787ee.css' rel='stylesheet' type='text/css' />
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/105508/45410/59742e1cf629d81af80787f3.css' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
+</head>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+<script type="text/javascript">
+   $youziku.load(".post-title-link,.post-title", "ca40f0770f5145a0bbdeb04de30c0d64", "LiDeBiao-Xing3");
+   $youziku.draw();
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jimmie Yang's  Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">别低头,会变矮</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/create-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmie Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmie Yang's  Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">搭建个人博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-23T17:33:06+08:00">
+                2017-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/23/create-blog/" class="leancloud_visitors" data-flag-title="搭建个人博客">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本文是采用 <code>github pages</code> + <code>hexo</code> + <code>域名绑定</code> 来搭建个人博客</p>
+<p>记录我搭建blog的过程</p>
+<p><strong>Why Github Pages?</strong></p>
+<p>对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.</p>
+<hr>
+<h3 id="搭建环境前提"><a href="#搭建环境前提" class="headerlink" title="搭建环境前提"></a>搭建环境前提</h3><ol>
+<li>nodejs <a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">官网</a></li>
+<li>git <a href="https://git-scm.com/" target="_blank" rel="external">官网</a></li>
+</ol>
+<p>对于<code>node</code>与<code>git</code>环境的搭建,这里就不在赘述</p>
+<hr>
+<h3 id="创建-GitHub-Pages"><a href="#创建-GitHub-Pages" class="headerlink" title="创建 GitHub Pages"></a>创建 GitHub Pages</h3><p><code>GitHub Pages</code><a href="https://pages.github.com/" target="_blank" rel="external">官网</a> 有详细的介绍,这里简单的进行演示</p>
+<p><strong>1. 在GitHub上创建仓库,仓库名需要以<code>userName.github.io</code>来命名.</strong></p>
+<p>比如你GitHub上的用户名是”Jimmie”,则你需要创建一个叫”jimmie.github.io”的仓库.<br>(命名对大小写不敏感)</p>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/hexo-create-github-pages-repo.png" alt="官方截图"></p>
+<p>这个来自官方的截图,只要填写仓库名,其他项可以都不填,然后点击创建仓库</p>
+<p><strong>2. 在第一步,我们只是创建了一个仓库,里面没有任何分支,而GitHub Pages 需要在<code>master</code>分支上操作,所以我们需要创建一次提交.</strong></p>
+<p>这里使用<code>git terminal</code>来演示</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 1. 克隆仓库</span></div><div class="line">git <span class="built_in">clone</span> https://github.com/username/username.github.io</div><div class="line"><span class="comment"># 2. 任意写一个文件做一次提交</span></div><div class="line"><span class="built_in">cd</span> username.github.io</div><div class="line"><span class="built_in">echo</span> <span class="string">"Hello World"</span> &gt; index.html</div><div class="line"><span class="comment"># 本地提交</span></div><div class="line">git add --all</div><div class="line">git commit -m <span class="string">"Initial commit"</span></div><div class="line"><span class="comment"># 提交到远程,并且远程仓库会创建master分支</span></div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<p><strong>3. 如果按照前2步的步骤,大致已经搭建完毕了.</strong></p>
+<p>这个时候,你可以访问 <code>https://username.github.io.</code> 网址,<br>如果成功,你讲看到 网页返回 ‘hello world’</p>
+<hr>
+<h3 id="Hexo-搭建博客"><a href="#Hexo-搭建博客" class="headerlink" title="Hexo 搭建博客"></a>Hexo 搭建博客</h3><blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">HEXO 官方文档</a> 里面有详细的建站过程</p>
+</blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><strong>1. Hexo 安装</strong></p>
+<p>Hexo 的搭建需要 <code>git</code>和<code>nodejs</code>支持,搭建完环境后,使用<code>npm</code>来安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在Mac上如果出现 <strong>{ Error: Cannot find module ‘./build/Release/DTraceProviderBindings’}</strong> ,</p>
+<p>请参考 <a href="https://hexo.io/docs/troubleshooting.html#Error-with-DTrace-Mac-OS-X" target="_blank" rel="external">Error with DTrace (Mac OS X)</a></p>
+<p>使用 <code>npm install hexo --no-optional</code> 来安装hexo</p>
+</blockquote>
+<p><strong>2. Hexo 建站</strong></p>
+<p>在你的电脑上创建一个blog目录,比如 你想创建<code>jimmie-blog</code>根站,则</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">hexo init jimmie-blog</div><div class="line"><span class="built_in">cd</span> jimmie-blog</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>此时,你只需要开启本地服务,就算搭建完本地博客了<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">hexo server</div><div class="line"><span class="comment"># 简写</span></div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
+<p>本地监听的是 <code>4000</code> 端口,打开 <code>http://localhost:4000</code> 就可以看到默认的博客样式</p>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/hexo-hexo-init.png" alt="hexo搭建"></p>
+<p><strong>3. hexo常用指令</strong></p>
+<ul>
+<li><strong>hexo clean</strong> - 清楚缓存</li>
+<li><strong>hexo generate</strong> - 生成静态文件 //简写 <em>hexo g</em></li>
+<li><strong>hexo server</strong> - 启用服务器 //简写 <em>hexo s</em></li>
+<li><strong>hexo deploy</strong> - 部署到仓库 //简写 <em>hexo d</em></li>
+<li><strong>hexo d -g</strong> - 先生成静态文件,再部署到仓库</li>
+</ul>
+<hr>
+<h3 id="Hexo部署到GitHub-Pages"><a href="#Hexo部署到GitHub-Pages" class="headerlink" title="Hexo部署到GitHub Pages"></a>Hexo部署到GitHub Pages</h3><blockquote>
+<p>需要使用 <code>git ssh</code>的方式来部署</p>
+<p>下面会介绍 电脑绑定github的ssh的方法</p>
+</blockquote>
+<p><strong>1. git 设置用户名,邮箱</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">git config --global user.email <span class="string">"you@example.com"</span></div><div class="line">git config --global user.name <span class="string">"Your Name"</span></div></pre></td></tr></table></figure>
+<p><em>使用你在GitHub上的用户名和邮箱</em></p>
+<p><strong>2. 生成秘钥</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"yourmail"</span></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/jimmie/.ssh/id_rsa):</div><div class="line">Created directory <span class="string">'/Users/yangqianjian/.ssh'</span>.</div><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved <span class="keyword">in</span> /Users/yangqianjian/.ssh/id_rsa.</div><div class="line">Your public key has been saved <span class="keyword">in</span> /Users/yangqianjian/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">SHA256:M2VCVgx25VBGkhZLRIdYO+AwlXrljtJ7J7Z66tYHkXI yourmail</div><div class="line">The key\<span class="string">'s randomart image is:</span></div><div class="line">+---[RSA 2048]----+</div><div class="line">|      o.BX@B*    |</div><div class="line">|       Bo+*O     |</div><div class="line">|       .o+*..    |</div><div class="line">|      . o+E.     |</div><div class="line">|       oS= .     |</div><div class="line">|      . ooo      |</div><div class="line">|       . o .     |</div><div class="line">|        o * o    |</div><div class="line">|       o+*.=     |</div><div class="line">+----[SHA256]-----+</div></pre></td></tr></table></figure>
+<p>如果不需要加密密码,直接连续3回车后,会在用户目录生成 <code>.ssh</code>文件夹,目录下<code>id_rsa.pub</code>就是产生的秘钥</p>
+<p><strong>3. 将秘钥添加到GitHub</strong></p>
+<p>在 <strong>GitHub -&gt; Setting -&gt; SSH and GPG Keys -&gt; New SSH Key</strong> 中添加秘钥</p>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/hexo-add-ssh-key.png" alt="添加ssh"></p>
+<p><strong>4. 验证绑定是否成功</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">ssh -T git@github.com</div><div class="line">Hi JimmieQian! You\<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure>
+<p>过程中看到 <em>Are you sure you want to continue connecting (yes/no)?</em>,选择yes</p>
+<p>如果看到 <em>Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access.</em>,<br>说明已经ssh绑定成功</p>
+<p><strong>5. 到此git配置完成,现在需要将 Hexo 的部署绑定到 GitHub Pages</strong></p>
+<p>在Hexo项目的根目录下,找到 <code>_config.yml</code>文件,找到部署(deploy)所在位置,添加一下字段</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:username/username.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
+<p><em>username</em> 改为自己的用户名即可.</p>
+<p><strong>6. hexo部署到GitHub,还需要部署插件.</strong></p>
+<p>需要在项目根目录下安装.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p><strong>7. 使用 <code>hexo d</code> 来测试部署</strong></p>
+<p>如果命令返回 <code>INFO  Deploy done: git</code> 则部署完成.</p>
+<p>访问 “<a href="https://username.github.io/&quot;,查看是否与本地的hexo服务器内容一致" target="_blank" rel="external">https://username.github.io/&quot;,查看是否与本地的hexo服务器内容一致</a>.</p>
+<hr>
+<h3 id="将GitHub-Pages-Hexo与域名绑定"><a href="#将GitHub-Pages-Hexo与域名绑定" class="headerlink" title="将GitHub Pages , Hexo与域名绑定"></a>将GitHub Pages , Hexo与域名绑定</h3><blockquote>
+<p>在GitHub Pages官方有介绍如何 <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="external">绑定域名的文档</a></p>
+</blockquote>
+<p><strong>1. 购买域名</strong></p>
+<p>建议到 <a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">godaddy</a> ,或者 <a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a> 上购买域名.<br><code>godaddy</code> 是国外的域名提供商,也提供支付宝支付,购买时可以搜一些优惠码进行购买<br><code>万网</code> 是阿里的产品</p>
+<p><strong>2. 域名绑定</strong></p>
+<p>在域名服务器的DNS管理中,添加两条A记录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">A     : 192.30.252.153</div><div class="line">        192.30.252.154</div></pre></td></tr></table></figure>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/hexo-godaddy.png" alt="godaddy dns 管理"></p>
+<p><strong>3. hexo配置</strong></p>
+<p>需要在GitHub项目的根目录上,添加<code>CNAME</code>记录,但是由于hexo每次提交都会覆盖GitHub上的内容,可以在 hexo项目的source目录下添加 名为 <code>CNAME</code>的文件.里面的值填上你的域名,你用hexo部署的时候,就会提交到GitHub的根目录中去.</p>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/hexo-cname.png" alt="hexo CNAME"></p>
+<blockquote>
+<p>如果你填的是<code>sample.com</code> 无论你是否输入<code>www</code>, 都会定位到<code>http://sample.com</code></p>
+<p>如果你填的是<code>www.sample.com</code> 则定位到<code>http://www.sample.com</code></p>
+</blockquote>
+<p><code>hexo clean</code>,<br><code>hexo d -g</code> 提交到GitHub</p>
+<p><strong>4. 访问域名</strong></p>
+<p>访问你申请的域名,如 <code>sample.com</code>, 就可以看到效果了.</p>
+<hr>
+<h3 id="为自定义域名添加-HTTPS-支持"><a href="#为自定义域名添加-HTTPS-支持" class="headerlink" title="为自定义域名添加 HTTPS 支持"></a>为自定义域名添加 HTTPS 支持</h3><blockquote>
+<p>一篇很详细的步骤说明 <a href="http://www.jianshu.com/p/92b6d4a6ecd5" target="_blank" rel="external">为自定义域名的GitHub Pages添加SSL 完整方案</a></p>
+</blockquote>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>至此, 配置结束.</p>
+<p>到 <a href="https://hexo.io/themes/index.html" target="_blank" rel="external">hexo-theme</a> 去挑选你喜欢的主题,然后开启个人博客之旅吧!!!</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3"
+               alt="Jimmie Yang" />
+          <p class="site-author-name" itemprop="name">Jimmie Yang</p>
+           
+              <p class="site-description motion-element" itemprop="description">搬砖也是技术活</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jimmieqian" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/your-user-name" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建环境前提"><span class="nav-number">2.</span> <span class="nav-text">搭建环境前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">创建 GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-搭建博客"><span class="nav-number">4.</span> <span class="nav-text">Hexo 搭建博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署到GitHub-Pages"><span class="nav-number">5.</span> <span class="nav-text">Hexo部署到GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将GitHub-Pages-Hexo与域名绑定"><span class="nav-number">6.</span> <span class="nav-text">将GitHub Pages , Hexo与域名绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为自定义域名添加-HTTPS-支持"><span class="nav-number">7.</span> <span class="nav-text">为自定义域名添加 HTTPS 支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">8.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmie Yang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("S8p1MKo7Dh91NomgXP5v3Tm3-gzGzoHsz", "CVzqT1YYp2w9ogHYPdPOfTNG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
