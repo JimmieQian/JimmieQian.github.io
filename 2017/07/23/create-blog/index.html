@@ -82,30 +82,30 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="http://otfmgyhnv.bkt.clouddn.com/favicon.ico?v=5.1.1" />
 
 
 
 
 
 
-<meta name="description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta name="description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.">
 <meta name="keywords" content="hexo,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建个人博客">
 <meta property="og:url" content="http://yoursite.com/2017/07/23/create-blog/index.html">
 <meta property="og:site_name" content="Jimmie Yang&#39;s  Blog">
-<meta property="og:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta property="og:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-create-github-pages-repo.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-hexo-init.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-add-ssh-key.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-godaddy.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-cname.png">
-<meta property="og:updated_time" content="2017-07-24T01:26:40.894Z">
+<meta property="og:updated_time" content="2017-07-24T01:52:36.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建个人博客">
-<meta name="twitter:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.  搭建环境前提 nodejs 官网 git 官网  对于node与git环境的搭建,这里就不在赘述  创建 GitHub PagesGitHub">
+<meta name="twitter:description" content="介绍本文是采用 github pages + hexo + 域名绑定 来搭建个人博客 记录我搭建blog的过程 Why Github Pages? 对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.">
 <meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/hexo-create-github-pages-repo.png">
 
 
@@ -172,7 +172,7 @@
 <script type="text/javascript" src="/js/src/particle.js"></script>
 
 <script type="text/javascript">
-   $youziku.load(".post-title-link,.post-title", "ca40f0770f5145a0bbdeb04de30c0d64", "LiDeBiao-Xing3");
+   $youziku.load(".posts-expand .post-title-link,.post-title", "ca40f0770f5145a0bbdeb04de30c0d64", "LiDeBiao-Xing3");
    $youziku.draw();
 </script>
 
@@ -229,32 +229,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -398,6 +388,7 @@
 <p>记录我搭建blog的过程</p>
 <p><strong>Why Github Pages?</strong></p>
 <p>对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.</p>
+<a id="more"></a>
 <hr>
 <h3 id="搭建环境前提"><a href="#搭建环境前提" class="headerlink" title="搭建环境前提"></a>搭建环境前提</h3><ol>
 <li>nodejs <a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">官网</a></li>
@@ -558,6 +549,8 @@
           
   <div class="comments" id="comments">
     
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTY5My82MjYx"></div>
+    
   </div>
 
 
@@ -615,10 +608,10 @@
             
             
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -626,10 +619,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -837,6 +830,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

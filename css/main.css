@@ -1597,12 +1597,12 @@ pre .javascript .function {
   padding: 2px;
   max-width: 96px;
   height: auto;
-  border: 5px solid #95e6fe;
+  border: 5px solid #fff;
 /* 头像圆形 */
   border-radius: 80px;
   -webkit-border-radius: 80px;
   -moz-border-radius: 80px;
-  box-shadow: inset 0 -1px 0 #333 sf;
+  box-shadow: inset 0 -2px 0 #333 sf;
 /* 设置循环动画 [animation: (play)动画名称 (2s)动画播放时长单位秒或微秒 (ase-out)动画播放的速度曲线为以低速结束
     (1s)等待1秒然后开始动画 (1)动画播放次数(infinite为循环播放) ]*/
   -webkit-animation: play 2s ease-out 1s 1;
@@ -1786,7 +1786,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7ff62;
+  background: #7fdfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2651,4 +2651,11 @@ embed {
 }
 .posts-expand .post-title {
   font-size: 35px;
+}
+.posts-collapse .post-title-link {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  line-height: inherit;
+  font-family: TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
 }
