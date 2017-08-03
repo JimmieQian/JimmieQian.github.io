@@ -47,7 +47,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Gradle 优化配置," />
 
 
 
@@ -63,16 +63,22 @@
 
 
 
-<meta name="description" content="搬砖也是技术活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jimmie Yang&#39;s  Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="存在的问题Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上. 如果没有给力点的代理,让人卡到脑壳发疼.">
+<meta name="keywords" content="Gradle 优化配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让Gradle提速">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/gradle-mirror/index.html">
 <meta property="og:site_name" content="Jimmie Yang&#39;s  Blog">
-<meta property="og:description" content="搬砖也是技术活">
+<meta property="og:description" content="存在的问题Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上. 如果没有给力点的代理,让人卡到脑壳发疼.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/as-gradle-setting.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-full-path.png">
+<meta property="og:updated_time" content="2017-08-03T07:08:45.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jimmie Yang&#39;s  Blog">
-<meta name="twitter:description" content="搬砖也是技术活">
+<meta name="twitter:title" content="让Gradle提速">
+<meta name="twitter:description" content="存在的问题Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上. 如果没有给力点的代理,让人卡到脑壳发疼.">
+<meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg">
 
 
 
@@ -100,13 +106,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/02/gradle-mirror/"/>
 
 
 
 
 
-  <title>Jimmie Yang's  Blog</title>
+  <title>让Gradle提速 | Jimmie Yang's  Blog</title>
   
 
 
@@ -149,9 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,158 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/atom-preferences/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jimmie Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jimmie Yang's  Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/03/atom-preferences/" itemprop="url">atom 偏好设置,以及常见问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T15:13:00+08:00">
-                2017-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE问题/" itemprop="url" rel="index">
-                    <span itemprop="name">IDE问题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/08/03/atom-preferences/" class="leancloud_visitors" data-flag-title="atom 偏好设置,以及常见问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png" alt="atom-logo"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/03/atom-preferences/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -421,9 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/02/gradle-mirror/" itemprop="url">让Gradle提速</a></h1>
+          <h1 class="post-title" itemprop="name headline">让Gradle提速</h1>
         
 
         <div class="post-meta">
@@ -503,204 +356,107 @@
       
 
       
-        
-          <p><img src="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg" alt="gradle logo"></p>
+        <p><img src="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg" alt="gradle logo"></p>
 <h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><p>Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上.</p>
 <p>如果没有给力点的代理,让人卡到脑壳发疼.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/02/gradle-mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<a id="more"></a>
+<hr>
+<h2 id="初次打开Android-Studio"><a href="#初次打开Android-Studio" class="headerlink" title="初次打开Android Studio"></a>初次打开Android Studio</h2><p>刚刚下好的AS,初次打开,会去检查gradle环境,并且会去下载as对应版本的gradle,如果有代理,这个过程也比较漫长,比较gradle大几十M,没有代理,基本上卡死了.</p>
+<blockquote>
+<p>解决:</p>
+<ul>
+<li><em>windows系统</em>  open as安装目录 =&gt; bin =&gt; idea.properties文件</li>
+</ul>
+<ul>
+<li><em>mac系统</em> open AndroidStudio,aoo =&gt; contents =&gt; bin =&gt; idea.properties文件</li>
+</ul>
+<p>在 <strong>idea.properties</strong> 文件末尾添加 <code>disable.android.first.run=true</code></p>
+<p>来取消构建过程</p>
+</blockquote>
+<hr>
+<h2 id="每次打开-AS检查gradle环境"><a href="#每次打开-AS检查gradle环境" class="headerlink" title="每次打开, AS检查gradle环境"></a>每次打开, AS检查gradle环境</h2><p>as不能设置默认的的本地gradle依赖,而是</p>
+<p><strong>1.</strong> 检查工程目录下的 <code>gradle-wrapper.properties</code>文件,的<br><code>distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</code>. 拿到版本号和下载路径.</p>
+<p><strong>2.</strong> 到gradle的 <strong>Service directory path</strong> <em>(可在as=&gt;setting=&gt;gradle中找到目录)</em> 下 =&gt; wrapper =&gt; dists =&gt; <em>gradle版本</em>(如gradle-3.5-all) =&gt; 签名目录(如exhrs6ca08n232b14ue48lbye) 下, 检查是否存在gradle的完成可用目录.(完整目录应该包含一个gradle文件夹,和一个gradle压缩包)</p>
+<p><strong>3.</strong> 如果存在完整的gradle目录,则不再去配置的URL中下载,而是直接使用在 <em>步骤2</em> 中的gradle包.</p>
+<p><strong>4.</strong> 如果不存在,则到URL路径中下载,并且会下载保存到 <em>步骤2</em> 中提到的目录.</p>
+<p><em>Service directory path</em><br><img src="http://otfmgyhnv.bkt.clouddn.com/as-gradle-setting.png" alt="Service directory path"></p>
+<p><em>gradle完整目录示例</em><br><img src="http://otfmgyhnv.bkt.clouddn.com/gradle-full-path.png" alt="gradle完整目录示例"></p>
+<p><strong>解决</strong><br>由上诉的过程,可由两种方案.</p>
+<ol>
+<li>在本地下载一个版本的 <code>gradle-all</code> 的压缩包.</li>
+<li>修改<code>gradle-wrapper.properties</code>文件的<code>distributionUrl</code><br><strong>windows</strong> =&gt; <code>distributionUrl=file\:/d:/gradle-2.2.1-all.zip</code></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/create-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jimmie Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jimmie Yang's  Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/23/create-blog/" itemprop="url">搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-23T17:33:06+08:00">
-                2017-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Gradle-优化配置/" rel="tag"># Gradle 优化配置</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/23/create-blog/" class="leancloud_visitors" data-flag-title="搭建个人博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本文是采用 <code>github pages</code> + <code>hexo</code> + <code>域名绑定</code> 来搭建个人博客</p>
-<p>记录我搭建blog的过程</p>
-<p><strong>Why Github Pages?</strong></p>
-<p>对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/23/create-blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/23/create-blog/" rel="next" title="搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 搭建个人博客
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/03/atom-preferences/" rel="prev" title="atom 偏好设置,以及常见问题">
+                atom 偏好设置,以及常见问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -708,6 +464,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTY5My82MjYx"></div>
+    
+  </div>
+
 
         </div>
         
@@ -728,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3"
@@ -820,6 +591,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存在的问题"><span class="nav-number">1.</span> <span class="nav-text">存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初次打开Android-Studio"><span class="nav-number">2.</span> <span class="nav-text">初次打开Android Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每次打开-AS检查gradle环境"><span class="nav-number">3.</span> <span class="nav-text">每次打开, AS检查gradle环境</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -928,10 +715,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -960,6 +747,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

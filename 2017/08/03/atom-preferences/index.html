@@ -47,7 +47,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="atom错误,atom," />
 
 
 
@@ -63,16 +63,19 @@
 
 
 
-<meta name="description" content="搬砖也是技术活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jimmie Yang&#39;s  Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="keywords" content="atom错误,atom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="atom 偏好设置,以及常见问题">
+<meta property="og:url" content="http://yoursite.com/2017/08/03/atom-preferences/index.html">
 <meta property="og:site_name" content="Jimmie Yang&#39;s  Blog">
-<meta property="og:description" content="搬砖也是技术活">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-install-packages-error01.png">
+<meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png">
+<meta property="og:updated_time" content="2017-08-03T07:13:09.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jimmie Yang&#39;s  Blog">
-<meta name="twitter:description" content="搬砖也是技术活">
+<meta name="twitter:title" content="atom 偏好设置,以及常见问题">
+<meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
 
 
 
@@ -100,13 +103,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/03/atom-preferences/"/>
 
 
 
 
 
-  <title>Jimmie Yang's  Blog</title>
+  <title>atom 偏好设置,以及常见问题 | Jimmie Yang's  Blog</title>
   
 
 
@@ -149,9 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -272,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/03/atom-preferences/" itemprop="url">atom 偏好设置,以及常见问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">atom 偏好设置,以及常见问题</h1>
         
 
         <div class="post-meta">
@@ -354,353 +353,85 @@
       
 
       
+        <p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png" alt="atom-logo"></p>
+<a id="more"></a>
+<h2 id="安装插件时，报-Compiler-tools-not-found"><a href="#安装插件时，报-Compiler-tools-not-found" class="headerlink" title="安装插件时，报 Compiler tools not found"></a>安装插件时，报 <code>Compiler tools not found</code></h2><p><em>具体的报错</em><br><img src="http://otfmgyhnv.bkt.clouddn.com/atom-install-packages-error01.png" alt="atom-install-packages-error"></p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>使用命令行安装,并且设置 <code>ATOM_NODE_URL</code> 的引用地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 1. windows</span></div><div class="line"><span class="built_in">set</span> ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist</div><div class="line"></div><div class="line"><span class="comment"># 1. mac</span></div><div class="line"><span class="built_in">export</span> ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist</div><div class="line"></div><div class="line"><span class="comment"># 2.</span></div><div class="line">apm install activate-power-mode</div></pre></td></tr></table></figure>
+<h2 id="修改-atom-的-keymaps"><a href="#修改-atom-的-keymaps" class="headerlink" title="修改 atom 的 keymaps"></a>修改 atom 的 keymaps</h2><p>修改格式 :</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'Selector'</span> :</div><div class="line">  <span class="string">'Command'</span> : <span class="string">'keystrokes'</span></div></pre></td></tr></table></figure>
+<p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png" alt="atom-keymap"></p>
+<p>实例, 修改删除行的快捷键为 <code>ctrl + d</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'atom-text-editor:not([mini])'</span>:</div><div class="line">  <span class="string">'editor:delete-line'</span>: <span class="string">'ctrl-d'</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
         
-          <p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png" alt="atom-logo"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/03/atom-preferences/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/gradle-mirror/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jimmie Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jimmie Yang's  Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/02/gradle-mirror/" itemprop="url">让Gradle提速</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T17:33:06+08:00">
-                2017-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Gradle/" itemprop="url" rel="index">
-                    <span itemprop="name">Gradle</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/atom错误/" rel="tag"># atom错误</a>
           
-
+            <a href="/tags/atom/" rel="tag"># atom</a>
           
-            
-          
-
-          
-          
-             <span id="/2017/08/02/gradle-mirror/" class="leancloud_visitors" data-flag-title="让Gradle提速">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><img src="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg" alt="gradle logo"></p>
-<h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><p>Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上.</p>
-<p>如果没有给力点的代理,让人卡到脑壳发疼.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/02/gradle-mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/02/gradle-mirror/" rel="next" title="让Gradle提速">
+                <i class="fa fa-chevron-left"></i> 让Gradle提速
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/create-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jimmie Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jimmie Yang's  Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/23/create-blog/" itemprop="url">搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-23T17:33:06+08:00">
-                2017-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/23/create-blog/" class="leancloud_visitors" data-flag-title="搭建个人博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本文是采用 <code>github pages</code> + <code>hexo</code> + <code>域名绑定</code> 来搭建个人博客</p>
-<p>记录我搭建blog的过程</p>
-<p><strong>Why Github Pages?</strong></p>
-<p>对于码农而言,GitHub无疑是很亲切的. Github Pages托管在GitHub上,使用起来很方便.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/23/create-blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -708,6 +439,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTY5My82MjYx"></div>
+    
+  </div>
+
 
         </div>
         
@@ -728,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://otfmgyhnv.bkt.clouddn.com/blog-avatar3"
@@ -820,6 +566,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件时，报-Compiler-tools-not-found"><span class="nav-number">1.</span> <span class="nav-text">安装插件时，报 Compiler tools not found</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">1.1.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-atom-的-keymaps"><span class="nav-number">2.</span> <span class="nav-text">修改 atom 的 keymaps</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -928,10 +690,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -960,6 +722,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
