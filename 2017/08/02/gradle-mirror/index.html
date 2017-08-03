@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/as-gradle-setting.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-full-path.png">
-<meta property="og:updated_time" content="2017-08-03T07:08:45.362Z">
+<meta property="og:updated_time" content="2017-08-03T08:37:48.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让Gradle提速">
 <meta name="twitter:description" content="存在的问题Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上. 如果没有给力点的代理,让人卡到脑壳发疼.">
@@ -361,31 +361,52 @@
 <p>如果没有给力点的代理,让人卡到脑壳发疼.</p>
 <a id="more"></a>
 <hr>
-<h2 id="初次打开Android-Studio"><a href="#初次打开Android-Studio" class="headerlink" title="初次打开Android Studio"></a>初次打开Android Studio</h2><p>刚刚下好的AS,初次打开,会去检查gradle环境,并且会去下载as对应版本的gradle,如果有代理,这个过程也比较漫长,比较gradle大几十M,没有代理,基本上卡死了.</p>
-<blockquote>
-<p>解决:</p>
+<h2 id="初次打开Android-Studio"><a href="#初次打开Android-Studio" class="headerlink" title="初次打开Android Studio"></a>初次打开Android Studio</h2><p>刚刚下好的AS,初次打开,会去检查gradle环境,并且会去下载as对应版本的gradle,如果有代理,这个过程也比较漫长,gradle大几十M,没有代理,基本上卡死了.</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><blockquote>
 <ul>
 <li><em>windows系统</em>  open as安装目录 =&gt; bin =&gt; idea.properties文件</li>
 </ul>
 <ul>
-<li><em>mac系统</em> open AndroidStudio,aoo =&gt; contents =&gt; bin =&gt; idea.properties文件</li>
+<li><em>mac系统</em> open AndroidStudio,app =&gt; contents =&gt; bin =&gt; idea.properties文件</li>
 </ul>
 <p>在 <strong>idea.properties</strong> 文件末尾添加 <code>disable.android.first.run=true</code></p>
 <p>来取消构建过程</p>
 </blockquote>
 <hr>
 <h2 id="每次打开-AS检查gradle环境"><a href="#每次打开-AS检查gradle环境" class="headerlink" title="每次打开, AS检查gradle环境"></a>每次打开, AS检查gradle环境</h2><p>as不能设置默认的的本地gradle依赖,而是</p>
-<p><strong>1.</strong> 检查工程目录下的 <code>gradle-wrapper.properties</code>文件,的<br><code>distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</code>. 拿到版本号和下载路径.</p>
-<p><strong>2.</strong> 到gradle的 <strong>Service directory path</strong> <em>(可在as=&gt;setting=&gt;gradle中找到目录)</em> 下 =&gt; wrapper =&gt; dists =&gt; <em>gradle版本</em>(如gradle-3.5-all) =&gt; 签名目录(如exhrs6ca08n232b14ue48lbye) 下, 检查是否存在gradle的完成可用目录.(完整目录应该包含一个gradle文件夹,和一个gradle压缩包)</p>
+<h3 id="gradle-检查流程"><a href="#gradle-检查流程" class="headerlink" title="gradle 检查流程"></a>gradle 检查流程</h3><p><strong>1.</strong> 检查工程目录下的 <code>gradle-wrapper.properties</code>文件,的<br><code>distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</code>. 拿到版本号和下载路径.</p>
+<p><strong>2.</strong> 到gradle的 <strong>Service directory path</strong> <em>(可在as=&gt;setting=&gt;gradle中找到目录)</em><br> =&gt; wrapper =&gt; dists =&gt; <em>gradle版本</em>(如gradle-3.5-all) =&gt; 签名目录(如exhrs6ca08n232b14ue48lbye) 下,<br>检查是否存在gradle的完整可用目录.(完整目录应该包含一个gradle文件夹,和一个gradle压缩包)</p>
 <p><strong>3.</strong> 如果存在完整的gradle目录,则不再去配置的URL中下载,而是直接使用在 <em>步骤2</em> 中的gradle包.</p>
 <p><strong>4.</strong> 如果不存在,则到URL路径中下载,并且会下载保存到 <em>步骤2</em> 中提到的目录.</p>
 <p><em>Service directory path</em><br><img src="http://otfmgyhnv.bkt.clouddn.com/as-gradle-setting.png" alt="Service directory path"></p>
 <p><em>gradle完整目录示例</em><br><img src="http://otfmgyhnv.bkt.clouddn.com/gradle-full-path.png" alt="gradle完整目录示例"></p>
-<p><strong>解决</strong><br>由上诉的过程,可由两种方案.</p>
-<ol>
-<li>在本地下载一个版本的 <code>gradle-all</code> 的压缩包.</li>
-<li>修改<code>gradle-wrapper.properties</code>文件的<code>distributionUrl</code><br><strong>windows</strong> =&gt; <code>distributionUrl=file\:/d:/gradle-2.2.1-all.zip</code></li>
-</ol>
+<h3 id="解决-1"><a href="#解决-1" class="headerlink" title="解决"></a>解决</h3><blockquote>
+<p>方案一</p>
+</blockquote>
+<p><strong>1.</strong> 在本地下载一个版本的 <code>gradle-all</code> 的压缩包.</p>
+<p><strong>2.</strong> 修改<code>gradle-wrapper.properties</code>文件的<code>distributionUrl</code></p>
+<p><strong>windows</strong> =&gt; <code>distributionUrl=file\:/d:/gradle-3.5-all.zip</code></p>
+<p><strong>mac</strong> =&gt; <code>distributionUrl=file\:/tmp/gradle-3.5-all.zip</code></p>
+<p>只需修改为自己对应的本地目录即可.</p>
+<p>这样,gradle就会去本地的文件找查找文件,再将其放到 <strong>流程步骤2</strong> 中对应的目录.</p>
+<blockquote>
+<p>方案二</p>
+</blockquote>
+<p>在 Android studio设置中gradle,设置为 <code>use local gradle distribution</code>,然后找到对应的本地gradle文件即可.</p>
+<p><strong>缺点 : 这种方式,并不能在项目一开始就能配置,而要初次打开后,gradle构建失败后,才能选择本地gradle</strong></p>
+<hr>
+<h2 id="配置gradle镜像-加速依赖的下载"><a href="#配置gradle镜像-加速依赖的下载" class="headerlink" title="配置gradle镜像,加速依赖的下载"></a>配置gradle镜像,加速依赖的下载</h2><p>gradle下载依赖,都是去 <code>jcenter</code> 或者 <code>mavenCentral</code> 的库中去找到相关的依赖包下载下来. 而这些都是国外的网站.下载速度很慢.</p>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>在根目录的  <code>build.gradle</code> 文件中指定 远程仓库为国内的镜像仓库,一般使用阿里云的镜像.</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    <span class="comment">// gradle 构建脚本的仓库</span></div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        maven&#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span>&#125;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">allprojects</span> &#123;</div><div class="line">   <span class="comment">// 项目中所有 module 的依赖仓库</span></div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        maven&#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span>&#125;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注释 : 这种方案,虽然能够解决问题,但是需要每一个项目,都需要去配置 阿里云镜像,比较麻烦.</p>
+</blockquote>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>在 <code>init.gradle</code>文件中设置 镜像仓库. 这个文件需要放在 <code>.gradle</code> 文件夹根目录上.<br>(这个目录,即上述提到的 <strong>Service directory path</strong> 目录)</p>
+<p>在 <code>.gradle</code>根目录下,打开或者新建 <code>init.gradle</code> 文件.写入</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">allprojects</span>&#123;</div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">      <span class="comment">//阿里里云镜像</span></div><div class="line">        <span class="keyword">def</span> REPOSITORY_URL = <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span></div><div class="line">        all &#123; ArtifactRepository repo -&gt;</div><div class="line">            <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</div><div class="line">                <span class="keyword">def</span> url = repo.url.toString()</div><div class="line">                <span class="comment">// 拦截 maven仓库,和jcenter仓库的下载方式</span></div><div class="line">                <span class="keyword">if</span> (url.startsWith(<span class="string">'https://repo1.maven.org/maven2'</span>) || url.startsWith(<span class="string">'https://jcenter.bintray.com/'</span>)) &#123;</div><div class="line">                    <span class="keyword">project</span>.logger.lifecycle <span class="string">"Repository $&#123;repo.url&#125; replaced by $REPOSITORY_URL."</span></div><div class="line">                    remove repo</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 设置优先 使用 阿里云镜像仓库</span></div><div class="line">        maven &#123;</div><div class="line">            url REPOSITORY_URL</div><div class="line">        &#125;</div><div class="line">        jcenter()</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这种方案可以一劳永逸,配置一次,就不需要担心了.</p>
+</blockquote>
 
       
     </div>
@@ -438,8 +459,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/03/atom-preferences/" rel="prev" title="atom 偏好设置,以及常见问题">
-                atom 偏好设置,以及常见问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/03/atom-preferences/" rel="prev" title="atom 偏好设置以及常见问题">
+                atom 偏好设置以及常见问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -601,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存在的问题"><span class="nav-number">1.</span> <span class="nav-text">存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初次打开Android-Studio"><span class="nav-number">2.</span> <span class="nav-text">初次打开Android Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每次打开-AS检查gradle环境"><span class="nav-number">3.</span> <span class="nav-text">每次打开, AS检查gradle环境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存在的问题"><span class="nav-number">1.</span> <span class="nav-text">存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初次打开Android-Studio"><span class="nav-number">2.</span> <span class="nav-text">初次打开Android Studio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">2.1.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每次打开-AS检查gradle环境"><span class="nav-number">3.</span> <span class="nav-text">每次打开, AS检查gradle环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gradle-检查流程"><span class="nav-number">3.1.</span> <span class="nav-text">gradle 检查流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-1"><span class="nav-number">3.2.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置gradle镜像-加速依赖的下载"><span class="nav-number">4.</span> <span class="nav-text">配置gradle镜像,加速依赖的下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一"><span class="nav-number">4.1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二"><span class="nav-number">4.2.</span> <span class="nav-text">方案二</span></a></li></ol></li></ol></div>
             
 
           </div>

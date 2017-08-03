@@ -65,16 +65,16 @@
 
 <meta name="keywords" content="atom错误,atom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="atom 偏好设置,以及常见问题">
+<meta property="og:title" content="atom 偏好设置以及常见问题">
 <meta property="og:url" content="http://yoursite.com/2017/08/03/atom-preferences/index.html">
 <meta property="og:site_name" content="Jimmie Yang&#39;s  Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-install-packages-error01.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png">
-<meta property="og:updated_time" content="2017-08-03T07:13:09.887Z">
+<meta property="og:updated_time" content="2017-08-03T07:30:37.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="atom 偏好设置,以及常见问题">
+<meta name="twitter:title" content="atom 偏好设置以及常见问题">
 <meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
 
 
@@ -109,7 +109,7 @@
 
 
 
-  <title>atom 偏好设置,以及常见问题 | Jimmie Yang's  Blog</title>
+  <title>atom 偏好设置以及常见问题 | Jimmie Yang's  Blog</title>
   
 
 
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">atom 偏好设置,以及常见问题</h1>
+          <h1 class="post-title" itemprop="name headline">atom 偏好设置以及常见问题</h1>
         
 
         <div class="post-meta">
@@ -325,7 +325,7 @@
 
           
           
-             <span id="/2017/08/03/atom-preferences/" class="leancloud_visitors" data-flag-title="atom 偏好设置,以及常见问题">
+             <span id="/2017/08/03/atom-preferences/" class="leancloud_visitors" data-flag-title="atom 偏好设置以及常见问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -359,10 +359,10 @@
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>使用命令行安装,并且设置 <code>ATOM_NODE_URL</code> 的引用地址</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 1. windows</span></div><div class="line"><span class="built_in">set</span> ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist</div><div class="line"></div><div class="line"><span class="comment"># 1. mac</span></div><div class="line"><span class="built_in">export</span> ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist</div><div class="line"></div><div class="line"><span class="comment"># 2.</span></div><div class="line">apm install activate-power-mode</div></pre></td></tr></table></figure>
 <h2 id="修改-atom-的-keymaps"><a href="#修改-atom-的-keymaps" class="headerlink" title="修改 atom 的 keymaps"></a>修改 atom 的 keymaps</h2><p>修改格式 :</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'Selector'</span> :</div><div class="line">  <span class="string">'Command'</span> : <span class="string">'keystrokes'</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'Selector'</span> :</div><div class="line">  <span class="string">'keystrokes'</span> : <span class="string">'Command'</span></div></pre></td></tr></table></figure>
 <p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png" alt="atom-keymap"></p>
 <p>实例, 修改删除行的快捷键为 <code>ctrl + d</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'atom-text-editor:not([mini])'</span>:</div><div class="line">  <span class="string">'editor:delete-line'</span>: <span class="string">'ctrl-d'</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'atom-text-editor:not([mini])'</span>:</div><div class="line">  <span class="string">'ctrl-d'</span>: <span class="string">'editor:delete-line'</span></div></pre></td></tr></table></figure>
 
       
     </div>
