@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-logo.jpg">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/as-gradle-setting.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/gradle-full-path.png">
-<meta property="og:updated_time" content="2017-08-03T08:37:48.329Z">
+<meta property="og:updated_time" content="2017-08-03T08:56:45.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让Gradle提速">
 <meta name="twitter:description" content="存在的问题Android Studio 采用 Gradle 来构建工程,由于众所周知的原因,在国内访问速度很慢,就如Gradle的logo 大象速度相一致. 基本上打开项目 都可能卡在 Gradle 的构建上. 如果没有给力点的代理,让人卡到脑壳发疼.">
@@ -405,7 +405,7 @@
 <p>在 <code>.gradle</code>根目录下,打开或者新建 <code>init.gradle</code> 文件.写入</p>
 <figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">allprojects</span>&#123;</div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">      <span class="comment">//阿里里云镜像</span></div><div class="line">        <span class="keyword">def</span> REPOSITORY_URL = <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span></div><div class="line">        all &#123; ArtifactRepository repo -&gt;</div><div class="line">            <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</div><div class="line">                <span class="keyword">def</span> url = repo.url.toString()</div><div class="line">                <span class="comment">// 拦截 maven仓库,和jcenter仓库的下载方式</span></div><div class="line">                <span class="keyword">if</span> (url.startsWith(<span class="string">'https://repo1.maven.org/maven2'</span>) || url.startsWith(<span class="string">'https://jcenter.bintray.com/'</span>)) &#123;</div><div class="line">                    <span class="keyword">project</span>.logger.lifecycle <span class="string">"Repository $&#123;repo.url&#125; replaced by $REPOSITORY_URL."</span></div><div class="line">                    remove repo</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 设置优先 使用 阿里云镜像仓库</span></div><div class="line">        maven &#123;</div><div class="line">            url REPOSITORY_URL</div><div class="line">        &#125;</div><div class="line">        jcenter()</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>这种方案可以一劳永逸,配置一次,就不需要担心了.</p>
+<p>这种方案可以一劳永逸,配置一次,就不需要担心</p>
 </blockquote>
 
       
@@ -536,7 +536,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -547,7 +547,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -558,7 +558,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
