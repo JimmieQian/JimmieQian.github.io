@@ -72,7 +72,7 @@
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-install-packages-error01.png">
 <meta property="og:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png">
-<meta property="og:updated_time" content="2017-08-03T07:30:37.300Z">
+<meta property="og:updated_time" content="2017-11-07T06:08:29.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="atom 偏好设置以及常见问题">
 <meta name="twitter:image" content="http://otfmgyhnv.bkt.clouddn.com/atom-logo-.png">
@@ -363,6 +363,14 @@
 <p><img src="http://otfmgyhnv.bkt.clouddn.com/atom-keymap.png" alt="atom-keymap"></p>
 <p>实例, 修改删除行的快捷键为 <code>ctrl + d</code></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="string">'atom-text-editor:not([mini])'</span>:</div><div class="line">  <span class="string">'ctrl-d'</span>: <span class="string">'editor:delete-line'</span></div></pre></td></tr></table></figure>
+<h2 id="Atom-代理设置"><a href="#Atom-代理设置" class="headerlink" title="Atom 代理设置"></a>Atom 代理设置</h2><p><strong>1. 设置Shadowsocks代理</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apm config <span class="built_in">set</span> http-proxy socks5:127.0.0.1:1080</div><div class="line">apm config <span class="built_in">set</span> https-proxy socks5:127.0.0.1:1080</div></pre></td></tr></table></figure>
+<p><strong>2. 取消ssl</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apm config <span class="built_in">set</span> strict-ssl <span class="literal">false</span></div></pre></td></tr></table></figure>
+<p><strong>3. 取消代理</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apm config <span class="built_in">set</span> http-proxy null</div><div class="line">apm config <span class="built_in">set</span> https-proxy null</div></pre></td></tr></table></figure>
+<p><strong>3. 查看代理设置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apm config get http-proxy</div><div class="line">apm config get https-proxy</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -580,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件时，报-Compiler-tools-not-found"><span class="nav-number">1.</span> <span class="nav-text">安装插件时，报 Compiler tools not found</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">1.1.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-atom-的-keymaps"><span class="nav-number">2.</span> <span class="nav-text">修改 atom 的 keymaps</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件时，报-Compiler-tools-not-found"><span class="nav-number">1.</span> <span class="nav-text">安装插件时，报 Compiler tools not found</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">1.1.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-atom-的-keymaps"><span class="nav-number">2.</span> <span class="nav-text">修改 atom 的 keymaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atom-代理设置"><span class="nav-number">3.</span> <span class="nav-text">Atom 代理设置</span></a></li></ol></div>
             
 
           </div>
